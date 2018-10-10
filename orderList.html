@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link href='css/horsey.css' rel='stylesheet' type='text/css' />
+    <link href='css/example.css' rel='stylesheet' type='text/css' />
+    <link href='css/main.css' rel='stylesheet' type='text/css' />
+    <link href='css/orderList.css' rel='stylesheet' type='text/css' />
+    <script src="http://www.jq22.com/jquery/html5.min.js"></script>
+</head>
+<body>
+<section>
+    <div class="top-nav">
+        <div class="type-nav nav-content">
+            <div class="n-title">类型</div>
+            <ul class="nav-list">
+                <li>FOC</li>
+                <li>POSM</li>
+                <li>Merchandsing</li>
+            </ul>
+        </div>
+        <div class="breed-nav  nav-content">
+            <div class="n-title">品类</div>
+            <ul class="nav-list">
+                <li>威士忌</li>
+                <li>威士忌</li>
+                <li>威士忌</li>
+                <li>威士忌</li>
+                <li>威士忌</li>
+                <li>威士忌</li>
+                <li>威士忌</li>
+            </ul>
+        </div>
+        <div class="name-nav nav-content">
+            <div class="n-title">品名</div>
+
+                        <div class='parent'>
+                            <input id='hy' />
+                            <span style="flex: 1;text-align: right;line-height: 40px;">SKU</span>
+                            <input id='ly' />
+                            <div class="search"> <button >搜索</button></div>
+
+                            <!--<pre>-->
+                            <!--<code>-->
+
+                            <!--</code>-->
+                            <!--</pre>-->
+                        </div>
+
+        </div>
+    </div>
+</section>
+
+<script src='js/horsey.js'></script>
+<script src='js/example.js'></script>
+<script>
+    var input = document.getElementById('hy')
+    horsey(input, {
+        suggestions: ['banana', 'apple', 'orange','cmyk','ddrom','ebay','four','good','html','item','jack','kfack']
+    });
+</script>
+</body>
+
+</html>
