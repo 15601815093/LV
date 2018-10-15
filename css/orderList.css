@@ -1,9 +1,4 @@
-section{
-    position: relative;
-    background: #f3f5f7;
-    padding: 0 20px;
-    padding-bottom: 60px;
-}
+
 .toplist-a-nav{
     background: white;
 }
@@ -35,6 +30,12 @@ section{
     text-align: center;
 }
 .type-nav li{
+    border: 1px #d8d8d8 solid;
+    padding: 8px;
+    border-radius: 20px;
+    margin: 15px;
+}
+.storehouse-type li{
     border: 1px #d8d8d8 solid;
     padding: 8px;
     border-radius: 20px;

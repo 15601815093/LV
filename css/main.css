@@ -160,3 +160,9 @@ section{
     background: #f3f5f7;
     color: black;
 }
+
+
+
+.searchable-select-dropdown{
+    z-index: 2;
+}
