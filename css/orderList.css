@@ -1,11 +1,19 @@
 section{
+    position: relative;
+    background: #f3f5f7;
+    padding: 0 20px;
+    padding-bottom: 60px;
+}
+.toplist-a-nav{
     background: white;
 }
 .nav-content{
     display: flex;
+    border-bottom: 1px #f3f3f3 solid;
+    margin: 0 20px;
 }
 .nav-content .n-title{
-   width: 150px;
+   width: 100px;
     text-align: center;
     line-height: 70px;
 }
@@ -18,11 +26,11 @@ section{
 
 .nav-list{
     /*display: flex;*/
-    width: calc(100% - 150px);
+    width: calc(100% - 140px);
 }
 
 .nav-list li{
-    width: 150px;
+    width: 140px;
     float: left;
     text-align: center;
 }
@@ -42,7 +50,7 @@ section{
     width: 30%;
     flex: 3;
     height: 40px;
-    margin: 0 2%;
+    margin: 0 3%;
     border: 1px #d8d8d8 solid;
     border-radius: 30px;
     background: white;
@@ -51,19 +59,58 @@ section{
     flex: 3;
 }
 .parent{
-    width: calc(100% - 150px);
+    width: calc(100% - 140px);
     background: transparent;
     display: flex;
     margin: 0;
     padding: 0;
     padding-top: 15px;
 }
-.search button{
-    width: 100px;
+.search-btn{
+    width: 110px;
     height: 30px;
     line-height: 30px;
     padding: 0;
     font-size: 14px;
     border-radius: 5px;
     margin-top: 5px;
+    margin-left: 180px;
+    background: #cbbb98;
+    color: white;
+}
+.pro-list li{
+    width: 230px;
+    /* margin: 8px; */
+    margin-right: 15.5px;
+    margin-top: 15px;
+    background: white;
+}
+.pro-list ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1230px;
+}
+.list-a{
+    display: block;
+    width: 230px;
+    height: 150px;
+}
+.list-name{
+    display: flex;
+    padding: 10px;
+}
+.list-name p {
+    flex: 1;
+    color: #a9a7a7;
+    font-size: 12px;
+}
+.list-name p:last-child{
+    text-align: right;
+}
+.list-section{
+    padding: 0 10px;
+    padding-bottom: 15px;
+}
+.list-section p{
+    line-height: 30px;
 }
