@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link href='css/main.css' rel='stylesheet' type='text/css' />
+    <link href='css/jquery.searchableSelect.css' rel='stylesheet' type='text/css' />
+    <link href='css/orderCreat.css' rel='stylesheet' type='text/css' />
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery.searchableSelect.js"></script>
+    <!--日期选择-->
+    <script src="js/mobiscroll_002.js" type="text/javascript"></script>
+    <script src="js/mobiscroll_004.js" type="text/javascript"></script>
+    <link href="css/mobiscroll_002.css" rel="stylesheet" type="text/css">
+    <link href="css/mobiscroll.css" rel="stylesheet" type="text/css">
+    <script src="js/mobiscroll.js" type="text/javascript"></script>
+    <script src="js/mobiscroll_003.js" type="text/javascript"></script>
+    <script src="js/mobiscroll_005.js" type="text/javascript"></script>
+    <link href="css/mobiscroll_003.css" rel="stylesheet" type="text/css">
+    <!--地理位置三级联动-->
+    <script src="js/Popt.js"></script>
+    <script src="js/cityJson.js"></script>
+    <script src="js/citySet.js"></script>
+    <style type="text/css">
+        ul, ol, dl { list-style: none; }
+        ._citys { width: 450px; display: inline-block; border: 2px solid #eee; padding: 5px; position: relative;background: #fffbfb; }
+        ._citys span { color: #56b4f8; height: 15px; width: 15px; line-height: 15px; text-align: center; border-radius: 3px; position: absolute; right: 10px; top: 10px; border: 1px solid #56b4f8; cursor: pointer; }
+        ._citys0 { width: 100%; height: 34px; display: inline-block; border-bottom: 2px solid #56b4f8; padding: 0; margin: 0; }
+        ._citys0 li { display: inline-block; line-height: 34px; font-size: 15px; color: #888; width: 80px; text-align: center; cursor: pointer; }
+        .citySel { background-color: #56b4f8; color: #fff !important; }
+        ._citys1 { width: 100%; display: inline-block; padding: 10px 0; }
+        ._citys1 a { width: 83px; height: 35px; display: inline-block; background-color: #f5f5f5; color: #666; margin-left: 6px; margin-top: 3px; line-height: 35px; text-align: center; cursor: pointer; font-size: 13px; overflow: hidden; }
+        ._citys1 a:hover { color: #fff; background-color: #56b4f8; }
+        .AreaS { background-color: #56b4f8 !important; color: #fff !important; }
+    </style>
+
+
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: arial, verdana, sans-serif;
+            font-size: 12px;
+            background: #ddd;
+        }
+        input, select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #aaa;
+            box-sizing: border-box;
+            border-radius: 5px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -webkit-border-radius: 5px;
+        }
+        .header {
+            border: 1px solid #333;
+            background: #111;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 -1px 1px black;
+            background-image: linear-gradient(#3C3C3C,#111);
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#3C3C3C),to(#111));
+            background-image: -moz-linear-gradient(#3C3C3C,#111);
+        }
+        .header h1 {
+            text-align: center;
+            font-size: 16px;
+            margin: .6em 0;
+            padding: 0;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .content {
+            padding: 15px;
+            background: #fff;
+        }
+        .order-bottom{
+            display: flex;
+            background: none;
+            border-top:none;
+            box-shadow: none;
+            padding: 0 10px;
+            padding-bottom: 20px;
+            background: #f3f5f7;
+            height: 70px;
+        }
+        .order-btn{
+            width: 50%;
+            height: 50px;
+            margin:10px ;
+        }
+        .reject-btn{
+            background: white;
+            color: black;
+        }
+        .sun-pro .m-pro{
+            margin-left: 40px;
+            line-height: 42px;
+        }
+        .m-pro{
+            width: 220px;
+        }
+        .m-num{
+            line-height: 30px;
+        }
+        .btn-numbox{
+            margin: inherit;
+            margin-left: 10px;
+        }
+        .ad-mark{
+            width: 200px;
+        }
+        .sun-pro .m-num{
+            line-height: 14px;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div class="h-link">
+        <a href="">我的订单></a>
+        <a href="">FOC></a>
+        <a href="">已完成</a>
+    </div>
+    <div class="order-recycle order-m">
+        <!--<div class="l-title">-->
+            <!--<p class="t-text">-->
+                <!--申请回收-->
+            <!--</p>-->
+        <!--</div>-->
+        <div class="l-content">
+            <ul>
+                <li>
+                    <div class="item-title">订单号</div>
+                    <!--<label for="appDateTime">日期时间</label>-->
+                    <p class="dis-p">门店</p>
+                </li>
+                <li>
+                    <div class="item-title">收货单位</div>
+                    <p class="dis-p">门店</p>                </li>
+                <li>
+                    <div class="item-title">用途</div>
+                    <p class="dis-p">门店</p>                </li>
+                <li>
+                    <div class="item-title">申请人</div>
+                    <p class="dis-p">门店</p>                </li>
+                <li>
+                    <div class="item-title">申请时间</div>
+                    <p class="dis-p">门店</p>                </li>
+                <li>
+                    <div class="item-title">总量</div>
+                    <p class="dis-p">门店</p>                </li>
+                <li>
+                    <div class="item-title">总额</div>
+                    <p class="dis-p">门店</p>                </li>
+                <li>
+                    <div class="item-title">目标销量</div>
+                    <p class="dis-p">门店</p>                </li>
+                <li>
+                    <div class="item-title">实际销量</div>
+                    <p class="dis-p">门店</p>                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="order-send order-m">
+        <div class="l-title">
+            <p class="t-text">
+                发货信息
+            </p>
+        </div>
+        <div class="l-content">
+            <ul>
+                <li>
+                    <div class="item-title">运输方式</div>
+                    <select>
+                        <option value="BlackBerry">BlackBerry</option>
+                        <option value="device">device</option>
+                        <option value="with">with</option>
+                    </select>
+                </li>
+
+                <li>
+                    <div class="item-title">要求到货时间</div>
+                    <!--<label for="appDateTime">日期时间</label>-->
+                    <input value="" class="item-input" readonly="readonly" name="appDateTime1" id="appDateTime1" type="text">
+                </li>
+
+            </ul>
+        </div>
+    </div>
+    <div class=" order-m">
+        <div class="m-title md">
+            <div class="m-pro">FOC</div>
+            <div class="m-num">申请数量</div>
+            <div class="m-num">申请金额</div>
+            <div class="m-unit">可用库存</div>
+            <div class="m-unit">审核数量</div>
+            <div class="m-recovery">审核金额</div>
+            <div class="m-mark">审核意见</div>
+        </div>
+        <div class="m-list md">
+            <div class="m-pro">
+                <div><img src="img/orderCreate.jpg" alt="" width="85" height="85"></div>
+                <div class="l-desc">
+                    <p>轩尼诗白兰地</p>
+                    <p>hennnly.x.o</p>
+                    <p>70L</p>
+                </div>
+            </div>
+            <div class="m-num">　
+                <p>10</p>
+            </div>
+            <div class="m-num">　
+                <p>10</p>
+            </div>
+            <div class="m-num">　
+                <p>10</p>
+            </div>
+            <div class="m-num">　
+                <ul class="btn-numbox">
+                    <li>
+                        <ul class="count">
+                            <li><span  class="num-jian" onclick="num_jian(this)">-</span></li>
+                            <li><input type="text" class="input-num"  value="0" /></li>
+                            <li><span  class="num-jia" onclick="num_jia(this)">+</span></li>
+                        </ul>
+                    </li>
+                    　　　     </ul>
+            </div>
+            <div class="m-recovery">
+                <div class="m-num">　
+                    <p>10</p>
+                </div>
+            </div>
+            <div class="ad-mark">
+                <p>asdadadasdasdad</p>
+            </div>
+        </div>
+        <div class="m-list md">
+            <div class="m-pro">
+                <div><img src="img/orderCreate.jpg" alt="" width="85" height="85"></div>
+                <div class="l-desc">
+                    <p>轩尼诗白兰地</p>
+                    <p>hennnly.x.o</p>
+                    <p>70L</p>
+                </div>
+            </div>
+            <div class="m-num">　
+                <p>10</p>
+            </div>
+            <div class="m-num">　
+                <p>10</p>
+            </div>
+            <div class="m-recovery">
+                <div class="m-num">　
+                    <p>10</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-list md sun-pro">
+            <div class="m-pro "  style="margin: inherit;text-align: center;">
+                <p style="margin-left: 115px;">共计</p>
+            </div>
+            <div class="m-num">　
+                <p>44瓶</p>
+            </div>
+            <div class="m-recovery">
+                <div class="m-num">　
+                    <p>44</p>
+                </div>
+            </div>
+            <div class="m-num">　
+                <p></p>
+            </div>
+            <div class="m-num">　
+                <p></p>
+            </div>
+            <div class="m-num">　
+                <p>44</p>
+            </div>
+            <div class="m-num">　
+                <p></p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="order-bottom">
+        <button class="order-btn reject-btn">Reject</button>
+        <button class="order-btn ">Agree</button>
+
+    </div>
+</section>
+<script type="text/javascript">
+
+
+    function num_jian(e) {
+        var dom = e.parentNode.parentNode.querySelector('.input-num')
+        var num = parseInt(dom.value)
+        if(num >0) num --
+        dom.value = num
+    }
+
+    function num_jia(e) {
+        var dom = e.parentNode.parentNode.querySelector('.input-num')
+        var num = parseInt(dom.value)
+        num ++
+        dom.value = num
+
+    }
+
+    $("#city").click(function (e) {
+        SelCity(this,e);
+        console.log("inout",$(this).val(),new Date())
+    });
+
+    $(function () {
+        var currYear = (new Date()).getFullYear();
+        var opt={};
+        opt.date = {preset : 'date'};
+        opt.datetime = {preset : 'datetime'};
+        opt.time = {preset : 'time'};
+        opt.default = {
+            theme: 'android-ics light', //皮肤样式
+            display: 'modal', //显示方式
+            mode: 'scroller', //日期选择模式
+            dateFormat: 'yyyy-mm-dd',
+            lang: 'zh',
+            showNow: true,
+            nowText: "今天",
+            startYear: currYear - 10, //开始年份
+            endYear: currYear + 10 //结束年份
+        };
+
+        $("#appDate").mobiscroll($.extend(opt['date'], opt['default']));
+        var optDateTime = $.extend(opt['datetime'], opt['default']);
+        var optTime = $.extend(opt['time'], opt['default']);
+        $("#appDateTime").mobiscroll(optDateTime).datetime(optDateTime);
+        $("#appDateTime1").mobiscroll(optDateTime).datetime(optDateTime);
+        $("#appDateTime2").mobiscroll(optDateTime).datetime(optDateTime);
+        $("#appTime").mobiscroll(optTime).time(optTime);
+
+
+        //加减
+
+    });
+</script>
+<script>
+    $(function(){
+        $('select').searchableSelect();
+    });
+
+</script>
+</body>
+
+</html>

@@ -166,3 +166,123 @@ section{
 .searchable-select-dropdown{
     z-index: 2;
 }
+
+
+
+
+
+
+
+/*横向时间轴*/
+.time-horizontal {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    width: 400px;
+}
+
+.time-horizontal li {
+    float: left;
+    position: relative;
+    width: 25%;
+    padding-top: 10px;
+    border-top: 1px solid #cbbb98;
+}
+.time-horizontal li:last-child{
+    border: none;
+}
+
+.time-horizontal li b:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #cbbb98;
+    border-radius: 8px;
+    background: #cbbb98;
+}
+/*纵向时间轴*/
+.time-vertical {
+    list-style-type: none;
+    padding: 0px;
+    height: 400px;
+}
+
+.time-vertical li {
+    height: 50px;
+    position: relative;
+    border-left: 1px solid #e3e3e3 ;
+}
+.time-vertical li:last-child{
+    border: none;
+}
+.time-vertical li a {
+    display: inline-block;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #000;
+    position: absolute;
+    top:-6px;
+    left: 0;
+}
+
+.time-vertical li b:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -5px;
+    width: 6px;
+    height: 6px;
+    border: 2px solid #98FB98;
+    border-radius: 10px;
+    background: #98FB98;
+}
+
+.time-vertical li span {
+    position: absolute;
+    color: #fff;
+    top: 18px;
+    left: -6px;
+}
+.rate-p{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    left: -40px;
+}
+.dis-p{
+    padding: 0 10px;
+}
+.h-link{
+    font-size: 16px;
+    padding: 10px 0;
+}
+
+.upload .btns{
+    display: flex;
+    padding: 30px 505px;
+    padding-top: 0;
+}
+#ctlBtn{
+    width: 94px;
+    height: 41px;
+    border: none;
+    background: #cbbb98;
+    color: white;
+    margin-left: 6px;
+    cursor: pointer;
+}
+
+#picker{
+    background: #00b7ee;
+    width: 94px;
+    height: 41px;
+    color: white;
+    line-height: 20px;
+}
+#thelist{
+    margin-top: 30px;
+    line-height: 30px;
+}

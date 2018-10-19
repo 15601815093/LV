@@ -1,0 +1,161 @@
+
+.d3 form {
+    background: #f3f5f7;
+    border-radius: 30px;
+}
+.d3 input, .d3 button {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.d3 input {
+    width: 100%;
+    height: 30px;
+    padding-left: 15px;
+    border-radius: 30px;
+}
+.d3 button {
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+.d3 button:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-size: 16px;
+    color: #9a9a9a;
+}
+
+
+.top-tab{
+    display: flex;
+    padding: 30px 0;
+    background: white;
+    margin-top: 20px;
+}
+.mo-tab{
+    width: calc(100% - 300px);
+    background: white;
+}
+.search-content{
+    width: 300px;
+    position: relative;
+    margin-right: 20px;
+
+}
+.tab-btn{
+    width: 110px;
+    height:30px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin: 0 20px;
+    background: white;
+    transition: all .3s;
+}
+
+.active{
+    width: 110px;
+    height: 30px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #cbbb98;
+    color: white;
+    margin:  0 20px;
+}
+/*.active:hover{*/
+    /*background: #e74c3c;*/
+    /*cursor: pointer;*/
+    /*color: white;*/
+/*}*/
+.check-all-list{
+    background: white;
+    margin: 15px 0;
+}
+.check-all{
+    padding: 25px 20px;
+    border-bottom: 1px #efefef solid;;
+}
+.m-title{
+    display: flex;
+    line-height: 25px;
+}
+.check-all-box{
+    flex: 1;
+    padding: 0 10px;
+}
+.btns{
+    flex: 1;
+    padding: 0 30px;
+    text-align: right;
+}
+.check-list .c-li{
+    margin-left: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 25px 25px;
+    border-bottom: 1px #efefef solid;
+    position: relative;
+}
+.c-li .switch{
+    position: absolute;
+    left: -10px;
+    top:34px;
+}
+.c-li p{
+    padding: 10px 0;
+}
+.order-num{
+    margin-right: 50px;
+    line-height: 25px;
+}
+.ord-address{
+    margin-right: 50px;
+    line-height: 25px;
+}
+.ord-auditing{
+    margin-right: 50px;
+    line-height: 25px;
+}
+.ord-area,.ord-city,.ord-channel{
+    width: 90px;
+    line-height: 25px;
+    margin-right: 50px;
+}
+.sub,.del{
+    height: 25px;
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 60px;
+    margin-left: 50px;
+}
+.sub:before{
+    background: url("../img/sub.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    content: "";
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    left: -20px;
+    top:0;
+}
+.del:before{
+    background: url("../img/del.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: -20px;
+    top: 3px;
+}

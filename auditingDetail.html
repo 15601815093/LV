@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link href='css/main.css' rel='stylesheet' type='text/css' />
+    <link href='css/jquery.searchableSelect.css' rel='stylesheet' type='text/css' />
+    <link href='css/orderCreat.css' rel='stylesheet' type='text/css' />
+    <script src="js/jquery-1.11.1.min.js"></script>
+
+    <style type="text/css">
+        ul, ol, dl { list-style: none; }
+        ._citys { width: 450px; display: inline-block; border: 2px solid #eee; padding: 5px; position: relative;background: #fffbfb; }
+        ._citys span { color: #56b4f8; height: 15px; width: 15px; line-height: 15px; text-align: center; border-radius: 3px; position: absolute; right: 10px; top: 10px; border: 1px solid #56b4f8; cursor: pointer; }
+        ._citys0 { width: 100%; height: 34px; display: inline-block; border-bottom: 2px solid #56b4f8; padding: 0; margin: 0; }
+        ._citys0 li { display: inline-block; line-height: 34px; font-size: 15px; color: #888; width: 80px; text-align: center; cursor: pointer; }
+        .citySel { background-color: #56b4f8; color: #fff !important; }
+        ._citys1 { width: 100%; display: inline-block; padding: 10px 0; }
+        ._citys1 a { width: 83px; height: 35px; display: inline-block; background-color: #f5f5f5; color: #666; margin-left: 6px; margin-top: 3px; line-height: 35px; text-align: center; cursor: pointer; font-size: 13px; overflow: hidden; }
+        ._citys1 a:hover { color: #fff; background-color: #56b4f8; }
+        .AreaS { background-color: #56b4f8 !important; color: #fff !important; }
+    </style>
+
+
+    <style type="text/css">
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: arial, verdana, sans-serif;
+            font-size: 12px;
+            background: #ddd;
+        }
+        input, select {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #aaa;
+            box-sizing: border-box;
+            border-radius: 5px;
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -webkit-border-radius: 5px;
+        }
+        .header {
+            border: 1px solid #333;
+            background: #111;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 -1px 1px black;
+            background-image: linear-gradient(#3C3C3C,#111);
+            background-image: -webkit-gradient(linear,left top,left bottom,from(#3C3C3C),to(#111));
+            background-image: -moz-linear-gradient(#3C3C3C,#111);
+        }
+        .header h1 {
+            text-align: center;
+            font-size: 16px;
+            margin: .6em 0;
+            padding: 0;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .content {
+            padding: 15px;
+            background: #fff;
+        }
+        .m-num{
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <div class="order-user order-m">
+        <div class="l-title">
+            <p class="t-text">
+                申请人信息
+            </p>
+        </div>
+        <div class="l-content">
+            <ul>
+                <li>
+                    <div class="item-title">姓名</div>
+                    <p class="dis-p">夏夏</p>
+                </li>
+                <li>
+                    <div class="item-title">电话</div>
+                    <p class="dis-p">13333333333</p>
+                </li>
+                <li>
+                    <div class="item-title">邮箱</div>
+                    <p class="dis-p">lucy@qq.com</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="order-address order-m">
+        <div class="l-title">
+            <p class="t-text">
+                收货人/门店信息/用途
+            </p>
+        </div>
+        <div class="l-content">
+            <ul>
+                <li>
+                    <div class="item-title">*收货类别</div>
+                    <p class="dis-p">门店</p>
+                </li>
+                <li>
+                    <div class="item-title">*收货信息</div>
+                    <p class="dis-p">门店</p>
+                </li>
+                <li>
+                    <div class="item-title">*地区</div>
+                    <p class="dis-p">门店</p>
+                </li>
+                <li>
+                    <div class="item-title">*渠道</div>
+                    <p class="dis-p">门店</p>
+                </li>
+                <li>
+                    <div class="item-title">*地址信息</div>
+                    <p class="dis-p">门店</p>
+                </li>
+                <li>
+                    <div class="item-title">*详细信息</div>
+                    <p class="dis-p">门店</p>
+                </li>
+                <li>
+                    <div class="item-title">*联系人</div>
+                    <p class="dis-p">门店</p>
+                </li>
+                <li>
+                    <div class="item-title">*联系电话</div>
+                    <p class="dis-p">门店</p>
+                </li>
+                <li>
+                    <div class="item-title">*用途</div>
+                    <p class="dis-p">门店</p>
+                </li>
+                <li>
+                    <div class="item-title">*客户类别</div>
+                    <p class="dis-p">门店</p>
+                </li>
+                <li>
+                    <div class="item-title">*客户等级</div>
+                    <p class="dis-p">门店</p>
+                </li>
+                <li>
+                    <div class="item-title">*卡座或包房数量</div>
+                    <p class="dis-p">门店</p>
+                </li>
+                <li>
+                    <div class="item-title">*合同期限</div>
+                    <!--<label for="appDateTime">日期时间</label>-->
+                    <p class="dis-p">门店</p>                </li>
+            </ul>
+        </div>
+        <div class="upload">
+            附件
+        </div>
+    </div>
+    <div class="order-send order-m">
+        <div class="l-title">
+            <p class="t-text">
+                发货信息
+            </p>
+        </div>
+        <div class="l-content">
+            <ul>
+                <li>
+                    <div class="item-title">运输方式</div>
+                    <p class="dis-p">门店</p>
+                </li>
+
+                <li>
+                    <div class="item-title">要求到货时间</div>
+                    <!--<label for="appDateTime">日期时间</label>-->
+                    <p class="dis-p">门店</p>                </li>
+                <li style="width: 94%">
+                    <div class="item-title">备注</div>
+                    <textarea rows="4" cols="140" placeholder="备注填写" class="remark">备注信息填写</textarea>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="order-recycle order-m">
+        <div class="l-title">
+            <p class="t-text">
+                回收信息
+            </p>
+        </div>
+        <div class="l-content">
+            <ul>
+                <li>
+                    <div class="item-title">要求回收时间</div>
+                    <!--<label for="appDateTime">日期时间</label>-->
+                    <p class="dis-p">门店</p>                </li>
+                <li>
+                    <div class="item-title"></div>
+                </li>
+                <li>
+                    <div class="item-title">地址信息</div>
+                    <p class="dis-p">门店</p>                </li>
+                <li>
+                    <div class="item-title">详细信息</div>
+                    <p class="dis-p">门店</p>                </li>
+                <li>
+                    <div class="item-title">联系人</div>
+                    <p class="dis-p">门店</p>                </li>
+                <li>
+                    <div class="item-title">联系电话</div>
+                    <p class="dis-p">门店</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class=" order-m">
+        <div class="m-title md">
+            <div class="m-pro">FOC</div>
+            <div class="m-num">申请数量</div>
+            <div class="m-unit">单位</div>
+            <div class="m-recovery">回收数量</div>
+            <div class="m-mark">备注</div>
+        </div>
+        <div class="m-list md">
+            <div class="m-pro">
+                <div><img src="img/orderCreate.jpg" alt="" width="85" height="85"></div>
+                <div class="l-desc">
+                    <p>轩尼诗白兰地</p>
+                    <p>hennnly.x.o</p>
+                    <p>70L</p>
+                </div>
+            </div>
+            <div class="m-num">　
+                <p>10</p>
+            </div>
+            <div class="m-unit">瓶</div>
+            <div class="m-recovery">
+                <div class="m-num">　
+                    <p>10</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-list md">
+            <div class="m-pro">
+                <div><img src="img/orderCreate.jpg" alt="" width="85" height="85"></div>
+                <div class="l-desc">
+                    <p>轩尼诗白兰地</p>
+                    <p>hennnly.x.o</p>
+                    <p>70L</p>
+                </div>
+            </div>
+            <div class="m-num">　
+                <p>10</p>
+            </div>
+            <div class="m-unit">瓶</div>
+            <div class="m-recovery">
+                <div class="m-num">　
+                    <p>10</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" order-m">
+        <div class="m-title md">
+            <div class="m-pro">FOC</div>
+            <div class="m-num">申请数量</div>
+            <div class="m-unit">单位</div>
+            <div class="m-recovery">回收数量</div>
+        </div>
+        <div class="m-list md">
+            <div class="m-pro">
+                <div><img src="img/orderCreate.jpg" alt="" width="85" height="85"></div>
+                <div class="l-desc">
+                    <p>轩尼诗白兰地</p>
+                    <p>hennnly.x.o</p>
+                    <p>70L</p>
+                </div>
+            </div>
+            <div class="m-num">　
+                <p>10</p>
+            </div>
+            <div class="m-unit">瓶</div>
+            <div class="m-recovery">
+                <div class="m-num">　
+                    <p>10</p>
+                </div>
+            </div>
+        </div>
+        <div class="m-list md">
+            <div class="m-pro">
+                <div><img src="img/orderCreate.jpg" alt="" width="85" height="85"></div>
+                <div class="l-desc">
+                    <p>轩尼诗白兰地</p>
+                    <p>hennnly.x.o</p>
+                    <p>70L</p>
+                </div>
+            </div>
+            <div class="m-num">　
+                <p>10</p>
+            </div>
+            <div class="m-unit">瓶</div>
+            <div class="m-recovery">
+                <div class="m-num">　
+                    <p>10</p>
+                </div>
+            </div>
+            <div class="ad-mark">
+                <p>asdadadasdasdad</p>
+            </div>
+        </div>
+    </div>
+    <div class="order-recycle order-m">
+        <div class="l-title">
+            <p class="t-text">
+                订单状态
+            </p>
+        </div>
+        <div class="rate-content">
+            <ul class="time-horizontal"><li><b></b><p class="rate-p">RD</p></li><li><b></b><p class="rate-p">REGIONAL TM</p></li><li><b></b><p class="rate-p">BRAND DIERCTOR</p></li><li><b></b><p class="rate-p">FINALCE</p></li></ul>             </li>
+        </div>
+        <div class="time-rate">
+            <ul class="time-vertical">
+                <li><b></b><a href="javascript:void(0)">keso</a></li>
+                <li><b></b><a href="javascript:void(0)">FlyElephant</a></li>
+                <li><b></b><a href="javascript:void(0)">博客园</a></li>
+                <li><b></b><a href="javascript:void(0)">创业</a></li>
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+</body>
+
+</html>
