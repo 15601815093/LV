@@ -7,16 +7,22 @@
     <title>Title</title>
     <link href='css/horsey.css' rel='stylesheet' type='text/css' />
     <link href='css/example.css' rel='stylesheet' type='text/css' />
+    <link href='css/toPage.css' rel='stylesheet' type='text/css' />
     <link href='css/main.css' rel='stylesheet' type='text/css' />
+    <script src="js/jquery-1.11.1.min.js"></script>
     <link href='css/orderList.css' rel='stylesheet' type='text/css' />
     <script src="http://www.jq22.com/jquery/html5.min.js"></script>
 </head>
 <body>
+<header>
+    <div class="logo"></div>
+
+</header>
 <section>
     <div class="toplist-a-nav">
         <div class="type-nav nav-content">
             <div class="n-title">类型</div>
-            <ul class="nav-list">
+            <ul class="nav-list" id="categoryCode1Id">
                 <li>FOC</li>
                 <li>POSM</li>
                 <li>Merchandsing</li>
@@ -159,15 +165,75 @@
             件
         </p>
     </div>
+    <ul id="pageBox">
+        <li class='list'>1</li>
+        <li class='list'>2</li>
+        <li class='list'>3</li>
+        <li class='list'>4</li>
+        <li class='list'>5</li>
+    </ul>
 </section>
 
+
+<script src='js/ajax.js'></script>
 <script src='js/horsey.js'></script>
 <script src='js/example.js'></script>
+<script src='js/toPage.js'></script>
 <script>
     var input = document.getElementById('hy')
     horsey(input, {
         suggestions: ['banana', 'apple', 'orange','cmyk','ddrom','ebay','four','good','html','item','jack','kfack']
     });
+    /*容器1参数*/
+
+    var options = {
+        list:".list",//列表标识
+        currentPage:1,//初始页（选传，默认1）
+        pageSize:5,//每页列表数
+        listTotal:131,//列表总数（选传），不传为list总数
+        callback:function(currentPage){//翻页回调（可填，可做ajax请求）,不传为纯html切换
+            loadData(ajaxDemo(currentPage))
+        }
+    }
+    $("#pageBox").paging(options)
+    function ajaxDemo(page,pageSize){
+        if(!pageSize)var pageSize = 5;
+        var data = {},arr=[];
+        for(var i = 1;i<=131;i++){
+            arr.push(i);
+            if(i==pageSize){
+                data[1]=arr;
+                arr=[];
+            }else if(i==pageSize*2){
+                data[2]=arr;
+                arr=[];
+            }else if(i==pageSize*3){
+                data[3]=arr;
+                arr=[];
+            }else if(i==pageSize*4){
+                data[4]=arr;
+                arr=[];
+            }else if(i==pageSize*5){
+                data[5]=arr;
+                arr=[];
+            }else if(i==pageSize*6){
+                data[6]=arr;
+                arr=[];
+            }else if(i==131){
+                data[7]=arr;
+                arr=[];
+            }
+        }
+        return data[page];
+    }
+    function loadData(data){
+        console.log("callback")
+        $("#pageBox").empty();
+        for(var i = 0;i<data.length;i++){
+            $("#pageBox").append("<li class='list'>"+data[i]+"</li>");
+        }
+    }
+
 </script>
 </body>
 
