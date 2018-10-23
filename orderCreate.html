@@ -43,8 +43,6 @@
     </style>
 
 
-
-
     <style type="text/css">
         body {
             padding: 0;
@@ -99,7 +97,7 @@
         </div>
         <div class="l-content">
             <ul>
-                <li>
+                <li class="o-name">
                     <div class="item-title">姓名</div>
                     <select>
                         <option value="BlackBerry">BlackBerry</option>
@@ -130,13 +128,13 @@
                         <option value="real">real</option>
                     </select>
                 </li>
-                <li>
+                <li >
                     <div class="item-title">电话</div>
-                    <input type="text" value="13333333333" class="item-input">
+                    <input type="text" value="13333333333" class="item-input o-phone" >
                 </li>
                 <li>
                     <div class="item-title">邮箱</div>
-                    <input type="text" value="lucy@qq.com" class="item-input">
+                    <input type="text" value="lucy@qq.com" class="item-input o-mail">
                 </li>
             </ul>
         </div>
@@ -149,7 +147,7 @@
         </div>
         <div class="l-content">
             <ul>
-                <li>
+                <li class="show-select-input">
                     <div class="item-title">*收货类别</div>
                     <select>
                         <option value="BlackBerry">BlackBerry</option>
@@ -169,9 +167,13 @@
                     <div class="item-title">*地区</div>
                     <input type="text" value="lucy@qq.com" class="item-input">
                 </li>
-                <li>
-                    <div class="item-title">*渠道</div>
-                    <input type="text" value="lucy@qq.com" class="item-input">
+                <li class="show-select-input">
+                    <div class="item-title ">*渠道</div>
+                    <select>
+                        <option value="BlackBerry">BlackBerry</option>
+                        <option value="device">device</option>
+                        <option value="with">with</option>
+                    </select>
                 </li>
                 <li>
                     <div class="item-title">*地址信息</div>
@@ -197,7 +199,7 @@
                         <option value="with">with</option>
                     </select>
                 </li>
-                <li>
+                <li  class="show-select-input">
                     <div class="item-title">*客户类别</div>
                     <select>
                         <option value="BlackBerry">BlackBerry</option>
@@ -205,7 +207,7 @@
                         <option value="with">with</option>
                     </select>
                 </li>
-                <li>
+                <li class="show-select-input">
                     <div class="item-title">*客户等级</div>
                     <select>
                         <option value="BlackBerry">BlackBerry</option>
@@ -217,10 +219,11 @@
                     <div class="item-title">*卡座或包房数量</div>
                     <input type="text" value="lucy@qq.com" class="item-input">
                 </li>
-                <li>
+                <li style="width: 100%">
                     <div class="item-title">*合同期限</div>
                     <!--<label for="appDateTime">日期时间</label>-->
-                    <input value="" class="item-input" readonly="readonly" name="appDateTime" id="appDateTime" type="text">
+                    <input value="" class="item-input" readonly="readonly" name="appDateTime" id="appDateTime" type="text"><span style="padding: 0 10px;">至</span>
+                    <input value="" class="item-input" readonly="readonly" name="appDateTime" id="appDateTime3" type="text">
                 </li>
             </ul>
         </div>
@@ -496,6 +499,7 @@
         </p>
     </div>
 </section>
+<script src='js/ajax.js'></script>
 <script type="text/javascript">
 
 
@@ -543,6 +547,7 @@
         $("#appDateTime").mobiscroll(optDateTime).datetime(optDateTime);
         $("#appDateTime1").mobiscroll(optDateTime).datetime(optDateTime);
         $("#appDateTime2").mobiscroll(optDateTime).datetime(optDateTime);
+        $("#appDateTime3").mobiscroll(optDateTime).datetime(optDateTime);
         $("#appTime").mobiscroll(optTime).time(optTime);
 
 
@@ -622,6 +627,32 @@
 <script>
     $(function(){
         $('select').searchableSelect();
+
+        /*获取申请人信息*/
+        CY.ajax('js/accountList.json',{
+            method:"GET",
+            success:function(data) {
+                if(data){
+                    $('.o-name .searchable-select-holder').html(data[0].name?data[0].name:'');
+                    $('.o-phone').val(data[0].phone?data[0].phone:'');
+                    $('.o-mail').val(data[0].email?data[0].email:'');
+                }
+                // code
+            }
+        })
+
+        /*收货人/门店信息/用途*/
+        CY.ajax('js/accountList.json',{
+            method:"GET",
+            success:function(data) {
+                if(data){
+                    $('.o-name .searchable-select-holder').html(data[0].name?data[0].name:'');
+                    $('.o-phone').val(data[0].phone?data[0].phone:'');
+                    $('.o-mail').val(data[0].email?data[0].email:'');
+                }
+                // code
+            }
+        })
     });
 
 </script>
