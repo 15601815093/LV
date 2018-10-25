@@ -159,3 +159,42 @@
     left: -20px;
     top: 3px;
 }
+
+
+/*右侧弹窗*/
+.check-all-list{
+    overflow: hidden;
+    position: relative;
+}
+.right-tips-content{
+    position: absolute;
+    top:calc(50% - 25px);
+    right:-200px;
+    display: flex;
+    transition:  .2s linear;
+}
+.right-tips{
+    width: 50px;
+    height: 180px;
+    background: #484848;
+    padding: 10px;
+    white-space: revert;
+    border-radius: 5px 0 0 5px;
+}
+.right-tips p{
+    color: white;
+    padding: 10px;
+    padding-top: 20px;
+}
+.right-tips-detail{
+    width: 200px;
+    height: 180px;
+    background: #484848;
+    border-left: 1px white solid;
+    padding: 10px;
+    padding-top: 48px;
+}
+.right-tips-detail p{
+    color:white;
+    line-height: 30px;
+}

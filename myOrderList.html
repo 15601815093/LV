@@ -66,8 +66,21 @@
 
             </ul>
         </div>
+        <div class="right-tips-content" >
+            <div class="right-tips">
+                <p>物流联系方式</p>
+            </div>
+            <div class="right-tips-detail" >
+                <p>联系人：<span>马毓璃</span></p>
+                <p>电话号码：<span>马毓璃</span></p>
+                <p>邮箱地址：<span>马毓璃</span></p>
+            </div>
+        </div>
     </div>
+
+
 </section>
+
 <script>
     appdList();
     /*获取url参数*/
@@ -187,6 +200,17 @@
             $('.tab-btn').removeClass('active');
             $('.tab-btn').eq(type).addClass('active');
         }
+        $('.right-tips-content').click(function(){
+            var b = $(this);
+            var r =  parseInt(b.css('right'));
+            if(r == '-200'){
+                b.css('right','0px')
+            }else if(r == '0'){
+                b.css('right','-200px')
+            }
+
+        })
+
 
     })
 </script>
